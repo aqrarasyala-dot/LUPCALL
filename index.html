@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LupCall — Your Everyday Kost Companion</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- =========================
+             HEADER
+        ========================== -->
+
+        <header class="topbar">
+
+            <div class="brand">
+
+                <div class="wolf-logo">
+                    🐺
+                </div>
+
+                <div>
+                    <h1>LupCall</h1>
+                    <span>Your everyday kost companion</span>
+                </div>
+
+            </div>
+
+            <button
+                class="notification-btn"
+                onclick="showToast('Tidak ada notifikasi baru')"
+            >
+                ♢
+            </button>
+
+        </header>
+
+
+        <!-- =========================
+             HOME
+        ========================== -->
+
+        <main id="homePage" class="page active">
+
+            <section class="hero">
+
+                <div>
+
+                    <p class="eyebrow">
+                        GOOD EVENING
+                    </p>
+
+                    <h2>
+                        Hey, Kostmate.
+                    </h2>
+
+                    <p>
+                        Everything you need,
+                        just one call away.
+                    </p>
+
+                </div>
+
+                <div class="hero-wolf">
+                    🐺
+                </div>
+
+            </section>
+
+
+            <!-- BALANCE -->
+
+            <section class="balance-card">
+
+                <div class="balance-top">
+
+                    <div>
+
+                        <span>
+                            MY BALANCE
+                        </span>
+
+                        <h2 id="balanceAmount">
+                            Rp 1.250.000
+                        </h2>
+
+                    </div>
+
+                    <button
+                        onclick="toggleBalance()"
+                        id="balanceEye"
+                    >
+                        ◉
+                    </button>
+
+                </div>
+
+
+                <div class="balance-bottom">
+
+                    <div>
+                        <small>
+                            SAVINGS
+                        </small>
+
+                        <strong id="homeSavings">
+                            Rp 850.000
+                        </strong>
+                    </div>
+
+
+                    <button
+                        class="small-light-btn"
+                        onclick="openPage('financePage')"
+                    >
+                        Manage
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- QUICK SERVICES -->
+
+            <div class="section-title">
+
+                <div>
+                    <span>QUICK CALL</span>
+                    <h3>What do you need?</h3>
+                </div>
+
+                <button onclick="openPage('servicesPage')">
+                    See all
+                </button>
+
+            </div>
+
+
+            <section class="service-grid">
+
+                <button
+                    class="service-card"
+                    onclick="openPage('repairPage')"
+                >
+                    <div class="service-icon">🔧</div>
+
+                    <strong>Fix</strong>
+
+                    <small>
+                        Bengkel darurat
+                    </small>
+                </button>
+
+
+                <button
+                    class="service-card"
+                    onclick="openPage('ridePage')"
+                >
+                    <div class="service-icon">🚗</div>
+
+                    <strong>Ride</strong>
+
+                    <small>
+                        Antar jemput
+                    </small>
+                </button>
+
+
+                <button
+                    class="service-card"
+                    onclick="openPage('eatPage')"
+                >
+                    <div class="service-icon">🍜</div>
+
+                    <strong>Eats</strong>
+
+                    <small>
+                        Makan & catering
+                    </small>
+                </button>
+
+
+                <button
+                    class="service-card"
+                    onclick="openPage('fashionPage')"
+                >
+                    <div class="service-icon">👕</div>
+
+                    <strong>Style</strong>
+
+                    <small>
+                        Outfit kostmate
+                    </small>
+                </button>
+
+            </section>
+
+
+            <!-- FINANCE -->
+
+            <div class="section-title">
+
+                <div>
+                    <span>YOUR MONEY</span>
+                    <h3>Finance</h3>
+                </div>
+
+            </div>
+
+
+            <section class="finance-grid">
+
+                <button
+                    onclick="openTopUp()"
+                    class="finance-card"
+                >
+                    <span>＋</span>
+                    <strong>Top Up</strong>
+                    <small>
+                        Add balance
+                    </small>
+                </button>
+
+
+                <button
+                    onclick="openPage('financePage')"
+                    class="finance-card"
+                >
+                    <span>♡</span>
+                    <strong>Savings</strong>
+                    <small>
+                        Save your money
+                    </small>
+                </button>
+
+
+                <button
+                    onclick="openPage('financePage')"
+                    class="finance-card"
+                >
+                    <span>↗</span>
+                    <strong>Finance</strong>
+                    <small>
+                        Track spending
+                    </small>
+                </button>
+
+            </section>
+
+
+            <!-- RECOMMENDATION -->
+
+            <section class="recommendation">
+
+                <div>
+
+                    <span>
+                        TODAY'S PICK
+                    </span>
+
+                    <h3>
+                        Lagi mager masak?
+                    </h3>
+
+                    <p>
+                        Cari makanan sekitar kost
+                        yang ramah kantong.
+                    </p>
+
+                    <button
+                        onclick="openPage('eatPage')"
+                    >
+                        Explore Eats →
+                    </button>
+
+                </div>
+
+                <div class="recommendation-icon">
+                    🍜
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- =========================
+             SERVICES
+        ========================== -->
+
+        <main
+            id="servicesPage"
+            class="page"
+        >
+
+            <button
+                class="back-button"
+                onclick="openPage('homePage')"
+            >
+                ← Back
+            </button>
+
+            <div class="page-heading">
+
+                <p class="eyebrow">
+                    LUPCALL
+                </p>
+
+                <h2>
+                    All Services
+                </h2>
+
+                <p>
+                    Semua kebutuhan anak kost
+                    dalam satu tempat.
+                </p>
+
+            </div>
+
+
+            <section class="big-service-list">
+
+                <button onclick="openPage('repairPage')">
+                    <span>🔧</span>
+                    <div>
+                        <strong>Emergency Workshop</strong>
+                        <small>
+                            Bengkel sekitar Semarang
+                        </small>
+                    </div>
+                    →
+                </button>
+
+
+                <button onclick="openPage('ridePage')">
+                    <span>🚗</span>
+                    <div>
+                        <strong>Antar Jemput</strong>
+                        <small>
+                            Driver siap membantu
+                        </small>
+                    </div>
+                    →
+                </button>
+
+
+                <button onclick="openPage('eatPage')">
+                    <span>🍜</span>
+                    <div>
+                        <strong>LupEats</strong>
+                        <small>
+                            Makanan & catering
+                        </small>
+                    </div>
+                    →
+                </button>
+
+
+                <button onclick="openPage('fashionPage')">
+                    <span>👕</span>
+                    <div>
+                        <strong>LupStyle</strong>
+                        <small>
+                            Fashion & mix match
+                        </small>
+                    </div>
+                    →
+                </button>
+
+            </section>
+
+        </main>
+
+
+        <!-- =========================
+             REPAIR
+        ========================== -->
+
+        <main
+            id="repairPage"
+            class="page"
+        >
+
+            <button
+                class="back-button"
+                onclick="openPage('homePage')"
+            >
+                ← Back
+            </button>
+
+            <div class="page-heading">
+
+                <p class="eyebrow">
+                    CALLFIX
+                </p>
+
+                <h2>
+                    Emergency Workshop
+                </h2>
+
+                <p>
+                    Bengkel pilihan dengan
+                    harga ramah pelajar.
+                </p>
+
+            </div>
+
+
+            <div
+                id="repairList"
+                class="listing"
+            ></div>
+
+        </main>
+
+
+        <!-- =========================
+             RIDE
+        ========================== -->
+
+        <main
+            id="ridePage"
+            class="page"
+        >
+
+            <button
+                class="back-button"
+                onclick="openPage('homePage')"
+            >
+                ← Back
+            </button>
+
+            <div class="page-heading">
+
+                <p class="eyebrow">
+                    CALLRIDE
+                </p>
+
+                <h2>
+                    Antar Jemput
+                </h2>
+
+                <p>
+                    Pilih area dan driver
+                    yang tersedia.
+                </p>
+
+            </div>
+
+
+            <div class="area-tabs">
+
+                <button
+                    class="area-tab active"
+                    onclick="showRideArea('temcy', this)"
+                >
+                    Temcy
+                </button>
+
+                <button
+                    class="area-tab"
+                    onclick="showRideArea('timur', this)"
+                >
+                    Semarang Timur
+                </button>
+
+                <button
+                    class="area-tab"
+                    onclick="showRideArea('barat', this)"
+                >
+                    Semarang Barat
+                </button>
+
+            </div>
+
+
+            <div
+                id="rideList"
+                class="listing"
+            ></div>
+
+        </main>
+
+
+        <!-- =========================
+             EAT
+        ========================== -->
+
+        <main
+            id="eatPage"
+            class="page"
+        >
+
+            <button
+                class="back-button"
+                onclick="openPage('homePage')"
+            >
+                ← Back
+            </button>
+
+            <div class="page-heading">
+
+                <p class="eyebrow">
+                    CALLEATS
+                </p>
+
+                <h2>
+                    Eat
+                </h2>
+
+                <p>
+                    Makan enak tanpa bikin
+                    kantong menangis.
+                </p>
+
+            </div>
+
+
+            <div
+                id="eatList"
+                class="food-list"
+            ></div>
+
+        </main>
+
+
+        <!-- =========================
+             FASHION
+        ========================== -->
+
+        <main
+            id="fashionPage"
+            class="page"
+        >
+
+            <button
+                class="back-button"
+                onclick="openPage('homePage')"
+            >
+                ← Back
+            </button>
+
+            <div class="page-heading">
+
+                <p class="eyebrow">
+                    LUPSTYLE
+                </p>
+
+                <h2>
+                    Fashion
+                </h2>
+
+                <p>
+                    Outfit anak kost yang
+                    tetap kece.
+                </p>
+
+            </div>
+
+
+            <!-- MIX MATCH -->
+
+            <div class="mixmatch-banner">
+
+                <div class="mixmatch-icon">
+                    ✦
+                </div>
+
+                <div>
+
+                    <span>
+                        MIX & MATCH
+                    </span>
+
+                    <h3>
+                        Bingung mau pakai apa?
+                    </h3>
+
+                    <p>
+                        LupCall yang pilihkan.
+                    </p>
+
+                </div>
+
+                <button
+                    onclick="generateOutfit()"
+                >
+                    Try →
+                </button>
+
+            </div>
+
+
+            <div
+                id="outfitResult"
+                class="outfit-result"
+            ></div>
+
+
+            <!-- CATEGORIES -->
+
+            <div
+                class="category-tabs"
+                id="fashionTabs"
+            >
+
+                <button
+                    class="category-tab active"
+                    data-fashion="Semua"
+                >
+                    Semua
+                </button>
+
+                <button
+                    class="category-tab"
+                    data-fashion="Kemeja"
+                >
+                    Kemeja
+                </button>
+
+                <button
+                    class="category-tab"
+                    data-fashion="Kaos"
+                >
+                    Kaos
+                </button>
+
+                <button
+                    class="category-tab"
+                    data-fashion="Cardigan"
+                >
+                    Cardigan
+                </button>
+
+                <button
+                    class="category-tab"
+                    data-fashion="Outer"
+                >
+                    Outer
+                </button>
+
+                <button
+                    class="category-tab"
+                    data-fashion="Celana"
+                >
+                    Celana
+                </button>
+
+                <button
+                    class="category-tab"
+                    data-fashion="Rok"
+                >
+                    Rok
+                </button>
+
+                <button
+                    class="category-tab"
+                    data-fashion="Dress"
+                >
+                    Dress
+                </button>
+
+                <button
+                    class="category-tab"
+                    data-fashion="Sweater"
+                >
+                    Sweater
+                </button>
+
+            </div>
+
+
+            <div
+                id="fashionList"
+                class="fashion-grid"
+            ></div>
+
+        </main>
+
+
+        <!-- =========================
+             FINANCE
+        ========================== -->
+
+        <main
+            id="financePage"
+            class="page"
+        >
+
+            <button
+                class="back-button"
+                onclick="openPage('homePage')"
+            >
+                ← Back
+            </button>
+
+            <div class="page-heading">
+
+                <p class="eyebrow">
+                    MY MONEY
+                </p>
+
+                <h2>
+                    Finance
+                </h2>
+
+                <p>
+                    Kelola uangmu tanpa ribet.
+                </p>
+
+            </div>
+
+
+            <!-- SAVINGS -->
+
+            <section class="saving-main-card">
+
+                <div>
+
+                    <span>
+                        TOTAL SAVINGS
+                    </span>
+
+                    <h2 id="savingAmount">
+                        Rp 850.000
+                    </h2>
+
+                </div>
+
+                <div class="saving-icon">
+                    ♡
+                </div>
+
+            </section>
+
+
+            <section class="saving-input-card">
+
+                <div>
+
+                    <span>
+                        ADD TO SAVINGS
+                    </span>
+
+                    <h3>
+                        Mau nabung berapa?
+                    </h3>
+
+                </div>
+
+
+                <div class="money-input">
+
+                    <span>
+                        Rp
+                    </span>
+
+                    <input
+                        type="number"
+                        id="savingInput"
+                        placeholder="0"
+                    >
+
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    onclick="addSaving()"
+                >
+                    + Add Savings
+                </button>
+
+            </section>
+
+
+            <!-- QUICK AMOUNT -->
+
+            <div class="quick-money">
+
+                <button onclick="setSaving(10000)">
+                    +10K
+                </button>
+
+                <button onclick="setSaving(25000)">
+                    +25K
+                </button>
+
+                <button onclick="setSaving(50000)">
+                    +50K
+                </button>
+
+                <button onclick="setSaving(100000)">
+                    +100K
+                </button>
+
+            </div>
+
+
+            <!-- FINANCE INFO -->
+
+            <section class="money-stat-grid">
+
+                <div>
+                    <span>
+                        THIS MONTH
+                    </span>
+
+                    <strong>
+                        Rp 1.450.000
+                    </strong>
+
+                    <small>
+                        Spending
+                    </small>
+                </div>
+
+
+                <div>
+                    <span>
+                        REMAINING
+                    </span>
+
+                    <strong>
+                        Rp 1.800.000
+                    </strong>
+
+                    <small>
+                        Available
+                    </small>
+                </div>
+
+            </section>
+
+
+            <section class="tip-card">
+
+                <span>
+                    KOSTMATE TIP
+                </span>
+
+                <h3>
+                    Small saving, big difference.
+                </h3>
+
+                <p>
+                    Coba sisihkan sedikit setiap
+                    kali menerima uang bulanan.
+                </p>
+
+            </section>
+
+        </main>
+
+
+        <!-- =========================
+             PROFILE
+        ========================== -->
+
+        <main
+            id="profilePage"
+            class="page"
+        >
+
+            <button
+                class="back-button"
+                onclick="openPage('homePage')"
+            >
+                ← Back
+            </button>
+
+            <div class="profile-header">
+
+                <div class="profile-avatar">
+                    🐺
+                </div>
+
+                <div>
+
+                    <span>
+                        KOSTMATE
+                    </span>
+
+                    <h2>
+                        LupCall User
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-menu">
+
+                <button
+                    onclick="showToast('Profile settings masih dalam pengembangan')"
+                >
+                    <span>⚙</span>
+                    Settings
+                    →
+                </button>
+
+                <button
+                    onclick="showToast('Help Center siap membantu')"
+                >
+                    <span>?</span>
+                    Help Center
+                    →
+                </button>
+
+                <button
+                    onclick="showToast('LupCall v1.0')"
+                >
+                    <span>ⓘ</span>
+                    About LupCall
+                    →
+                </button>
+
+            </div>
+
+        </main>
+
+
+        <!-- =========================
+             BOTTOM NAV
+        ========================== -->
+
+        <nav class="bottom-nav">
+
+            <button
+                class="nav-item active"
+                data-page="homePage"
+                onclick="openPage('homePage')"
+            >
+                <span>⌂</span>
+                <small>Home</small>
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="servicesPage"
+                onclick="openPage('servicesPage')"
+            >
+                <span>⊞</span>
+                <small>Services</small>
+            </button>
+
+
+            <button
+                class="call-button"
+                onclick="openEmergency()"
+            >
+                🐺
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="financePage"
+                onclick="openPage('financePage')"
+            >
+                <span>◈</span>
+                <small>Finance</small>
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="profilePage"
+                onclick="openPage('profilePage')"
+            >
+                <span>○</span>
+                <small>Profile</small>
+            </button>
+
+        </nav>
+
+    </div>
+
+
+    <!-- =========================
+         MODAL
+    ========================== -->
+
+    <div
+        id="modalOverlay"
+        class="modal-overlay"
+        onclick="closeModal(event)"
+    >
+
+        <div
+            class="modal"
+            onclick="event.stopPropagation()"
+        >
+
+            <button
+                class="modal-close"
+                onclick="closeModal()"
+            >
+                ×
+            </button>
+
+            <div id="modalContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+
+    <div
+        id="toast"
+        class="toast"
+    >
+        <span>✓</span>
+
+        <p>
+            Success
+        </p>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
